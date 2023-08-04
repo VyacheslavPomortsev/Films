@@ -2,11 +2,11 @@ public class FilmManager {
     private int maxPosterSize = 5;
     private Films[] items = new Films[0];
 
-    public FilmManager (int posterSize) {
+    public FilmManager(int posterSize) {
         maxPosterSize = posterSize;
     }
 
-    public FilmManager () {
+    public FilmManager() {
         maxPosterSize = 5;
     }
 
