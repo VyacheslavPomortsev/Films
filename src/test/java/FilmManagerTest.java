@@ -83,4 +83,20 @@ public class FilmManagerTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void testTwoFilms() {
+        FilmManager repo = new FilmManager(2);
+        repo.save(item1);
+        repo.save(item2);
+        repo.save(item3);
+        repo.save(item4);
+        repo.save(item5);
+        repo.save(item6);
+        repo.save(item7);
+
+        Films[] expected = {item7, item6};
+        Films[] actual = repo.FindLast();
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
