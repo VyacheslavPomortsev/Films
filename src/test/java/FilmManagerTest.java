@@ -23,7 +23,7 @@ public class FilmManagerTest {
         repo.save(item7);
 
         Films[] expected = {item1, item2, item3, item4, item5, item6, item7};
-        Films[] actual = repo.FindAll();
+        Films[] actual = repo.findAll();
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -40,7 +40,7 @@ public class FilmManagerTest {
         repo.save(item7);
 
         Films[] expected = {item7, item6, item5, item4, item3};
-        Films[] actual = repo.FindLast();
+        Films[] actual = repo.findLast();
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -57,7 +57,7 @@ public class FilmManagerTest {
         repo.save(item7);
 
         Films[] expected = {item7, item6, item5, item4, item3, item2, item1};
-        Films[] actual = repo.FindLast();
+        Films[] actual = repo.findLast();
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -67,7 +67,7 @@ public class FilmManagerTest {
         FilmManager repo = new FilmManager();
 
         Films[] expected = {};
-        Films[] actual = repo.FindAll();
+        Films[] actual = repo.findAll();
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -78,7 +78,7 @@ public class FilmManagerTest {
         repo.save(item1);
 
         Films[] expected = {item1};
-        Films[] actual = repo.FindAll();
+        Films[] actual = repo.findAll();
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -95,7 +95,24 @@ public class FilmManagerTest {
         repo.save(item7);
 
         Films[] expected = {item7, item6};
-        Films[] actual = repo.FindLast();
+        Films[] actual = repo.findLast();
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testIfSixFilms() {
+        FilmManager repo = new FilmManager();
+
+        repo.save(item1);
+        repo.save(item2);
+        repo.save(item3);
+        repo.save(item4);
+
+
+
+        Films[] expected = {item4, item3, item2, item1};
+        Films[] actual = repo.findLast();
 
         Assert.assertArrayEquals(expected, actual);
     }

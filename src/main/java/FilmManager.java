@@ -19,12 +19,18 @@ public class FilmManager {
         items = tmp;
     }
 
-    public Films[] FindAll() {
+    public Films[] findAll() {
         return items;
     }
 
-    public Films[] FindLast() {
-        Films[] reversed = new Films[maxPosterSize];
+    public Films[] findLast() {
+        int length;
+        if (items.length < maxPosterSize) {
+            length = items.length;
+        } else {
+            length = maxPosterSize;
+        }
+        Films[] reversed = new Films[length];
         for (int i = 0; i < reversed.length; i++) {
             reversed[i] = items[items.length - 1 - i];
         }
